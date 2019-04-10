@@ -19,7 +19,7 @@
             <div class="w3layouts-main">
                 <h2>Inloggen</h2>
                 <form action="includes/login_check.php" method="post">
-                    <input type="email" class="ggg" name="email" placeholder="E-marandomil" required="">
+                    <input type="email" class="ggg" name="email" placeholder="E-mail" required="">
                     <input type="password" class="ggg" name="password" placeholder="Wachtwoord" required="">
                     <div class="clearfix"></div>
                     <input type="submit" value="Log in" name="login">
