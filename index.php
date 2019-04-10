@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "includes/connn.php";
+include_once "includes/conn.php";
 include_once "includes/login_check.php";
 
 if(isset($_SESSION["email"])){
