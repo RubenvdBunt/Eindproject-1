@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "includes/conn.php";
+include_once "includes/connn.php";
 include_once "includes/login_check.php";
 
 if(isset($_SESSION["email"])){
@@ -42,7 +42,7 @@ if(isset($_SESSION["email"])){
                         <div class="grid_3 grid_4 w3_agileits_icons_page">
                             <div class="icons">
                                 <h2 class="titel">Welkom!</h2>
-                                
+
                             </div>
                         </div>
                     </div>
