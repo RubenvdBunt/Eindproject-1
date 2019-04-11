@@ -1062,12 +1062,9 @@ if(isset($_SESSION["email"])){
 		
 </section>
 <!-- footer -->
-	<div class="footer">
-		<div class="wthree-copyright">
-            <p>© Ruben van de Bunt 2019</p>
-		</div>
-	</div>
-<!-- //footer -->
+    <?php
+    include_once "includes/script.php";
+    ?>
 </section>
 
 <!--main content end-->
