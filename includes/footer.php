@@ -5,10 +5,4 @@
           </div>
       </div>
 </section>
-</section>
-<?php
-include_once "includes/script.php";
-?>
-</section>
-</body>
-</html>
+
