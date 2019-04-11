@@ -52,7 +52,7 @@ if(isset($_SESSION["email"])){
                 <section class="footer">
                       <div class="footer">
                           <div class="wthree-copyright">
-                              <p>© Ruben van de Bunt 2019</p>
+                              <p>© Joey Akse 2019</p>
                           </div>
                       </div>
                 </section>
