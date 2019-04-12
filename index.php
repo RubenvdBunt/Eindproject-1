@@ -47,6 +47,13 @@ if(isset($_SESSION["email"])){
                         </div>
                     </div>
                 </section>
-<?php
- include("includes/footer.php");
- ?>
+                <?php
+                 include("includes/footer.php");
+                 ?>
+            </section>
+            <?php
+                include_once "includes/script.php";
+            ?>
+        </section>
+    </body>
+</html>

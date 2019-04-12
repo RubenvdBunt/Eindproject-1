@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be83ca0a-ab3e-43f5-b0a3-e00604ac09f3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,17 +52,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docenten.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+            <state relative-caret-position="69">
+              <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/leerlingen.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="583">
+              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="33" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fontawesome.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="1066" column="6" selection-start-line="1066" selection-start-column="6" selection-end-line="1066" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+            <state relative-caret-position="1196">
+              <caret line="52" selection-start-line="52" selection-end-line="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/footer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -70,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/klassen.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1081">
-              <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="55" />
+            <state relative-caret-position="69">
+              <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -102,11 +129,12 @@
         <option value="$PROJECT_DIR$/includes/navbar.php" />
         <option value="$PROJECT_DIR$/includes/login_check.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/klassen.php" />
-        <option value="$PROJECT_DIR$/fontawesome.php" />
-        <option value="$PROJECT_DIR$/leerlingen.php" />
-        <option value="$PROJECT_DIR$/docenten.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/klassen.php" />
+        <option value="$PROJECT_DIR$/docenten.php" />
+        <option value="$PROJECT_DIR$/leerlingen.php" />
+        <option value="$PROJECT_DIR$/includes/footer.php" />
+        <option value="$PROJECT_DIR$/fontawesome.php" />
       </list>
     </option>
   </component>
@@ -126,8 +154,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="Eindproject-PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Eindproject-PHP" type="462c0819:PsiDirectoryNode" />
+              <item name="Eindproject-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Eindproject-1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -183,17 +211,19 @@
       <workItem from="1554722416737" duration="135000" />
       <workItem from="1554884093480" duration="2244000" />
       <workItem from="1554889651459" duration="36000" />
+      <workItem from="1554980066874" duration="46000" />
+      <workItem from="1554988014213" duration="497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21323000" />
+    <option name="totallyTimeSpent" value="21866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10181237" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10394456" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -233,20 +263,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../interface design/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../interface design/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../interface design/style.css" />
+    <entry file="file://$PROJECT_DIR$/../interface design/index.php" />
     <entry file="file://$PROJECT_DIR$/includes/logo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -254,12 +272,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/20d0d016-9fc1-484e-ab2d-9d6746c11e04/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/34b05156-e6a9-4689-af09-8ff99af10ac6/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/20d0d016-9fc1-484e-ab2d-9d6746c11e04/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/34b05156-e6a9-4689-af09-8ff99af10ac6/console.sql" />
     <entry file="das://34b05156-e6a9-4689-af09-8ff99af10ac6/schema/eindopdracht/table/docent">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -296,20 +310,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fontawesome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24518">
-          <caret line="1066" column="43" selection-start-line="1066" selection-start-column="43" selection-end-line="1066" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leerlingen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
-          <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/conn.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -331,24 +331,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docenten.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        <state relative-caret-position="1196">
+          <caret line="52" selection-start-line="52" selection-end-line="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/klassen.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
-          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="55" />
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/docenten.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leerlingen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="33" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fontawesome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="1066" column="6" selection-start-line="1066" selection-start-column="6" selection-end-line="1066" selection-end-column="6" />
         </state>
       </provider>
     </entry>
