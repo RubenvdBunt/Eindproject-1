@@ -31,3 +31,38 @@
         }
     }
 ?>
+
+<!--if($rows < 1) {-->
+<!---->
+<!--header("Location: ../login.php?error");-->
+<!--exit();-->
+<!---->
+<!--}else{-->
+<!---->
+<!--if($rows = mysqli_fetch_assoc($hashedPwdCheck)){-->
+<!---->
+<!--$hashedPwdCheck = password_verify($password, $row['GebruikerWachtwoord']);-->
+<!---->
+<!--if($hashedPwdCheck == false){-->
+<!---->
+<!--header("Location: ../login.php?error");-->
+<!--exit();-->
+<!---->
+<!--}elseif($hashedPwdCheck == true){-->
+<!---->
+<!--session_start();-->
+<!--$_SESSION['email'] = $email;-->
+<!--header("Location: ../index.php?login=succes");-->
+<!--exit();-->
+<!---->
+<!--}else{-->
+<!---->
+<!--header("Location: ../login.php?error");-->
+<!--exit();-->
+<!--$error = "Ongeldige combinatie.";-->
+<!--echo $error;-->
+<!---->
+<!--}-->
+<!--}-->
+<!--mysqli_close($conn);-->
+<!--}-->
