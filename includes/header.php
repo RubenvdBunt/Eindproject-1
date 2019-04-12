@@ -26,3 +26,14 @@ if(isset($_SESSION["email"])){
     <link href="css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
+  <section id="container">
+      <?php
+      include_once "includes/logo.php";
+      include_once "includes/navbar.php";
+      ?>
+      </header>
+      <?php
+      include_once "includes/sidebar.php";
+      ?>
+
+      <section id="main-content">
