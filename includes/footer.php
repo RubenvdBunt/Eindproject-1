@@ -1,7 +1,7 @@
 <section class="footer">
       <div class="footer">
           <div class="wthree-copyright">
-              <p>© Joey Akse 2019</p>
+              <p>© Ruben van de Bunt & Joey Akse <?php echo date("Y"); ?></p>
           </div>
       </div>
 </section>
@@ -10,5 +10,6 @@
 include_once "includes/script.php";
 ?>
 </section>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
