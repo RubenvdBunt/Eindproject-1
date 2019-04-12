@@ -1,0 +1,8 @@
+input{
+  display: block;
+  float: right;
+}
+
+div .inputs{
+  width: 50%;
+}

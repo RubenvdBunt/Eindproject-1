@@ -19,10 +19,21 @@ if(isset($_SESSION["email"])){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welkom!</title>
+    <title>Eindproject leerjaar 2</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" >
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/style-responsive.css" rel="stylesheet"/>
     <link href="css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
+  <section id="container">
+      <?php
+      include_once "includes/logo.php";
+      include_once "includes/navbar.php";
+      ?>
+      </header>
+      <?php
+      include_once "includes/sidebar.php";
+      ?>
+
+      <section id="main-content">
