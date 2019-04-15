@@ -1,4 +1,4 @@
-<?php
+<?ph p
 session_start();
 include_once "includes/conn.php";
 include_once "includes/login_check.php";

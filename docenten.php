@@ -1,6 +1,8 @@
 <?php
 include ("includes/header.php");
  ?>
+
+ <link rel="stylesheet" href="css/docenten.css" >
         <section class="wrapper">
             <div class="wthree-font-awesome">
                 <div class="grid_3 grid_4 w3_agileits_icons_page">
@@ -18,19 +20,22 @@ include ("includes/header.php");
                             </tr>
                             <?php
 
-                            $sql = "SELECT DocentVoornaam, DocentAchternaam, DocentEmail FROM docent";
+                            $sql = "SELECT * FROM docent";
                             $result = $conn-> query($sql);
 
                             if($result-> num_rows > 0){
                                 While($row = $result-> fetch_assoc()){
-                                    echo "<tr><td>" . $row["DocentVoornaam"] . "</td><td>" . $row["DocentAchternaam"] . "</td><td>" . $row["DocentEmail"] . "</td><td></td><td> <input type='button' value='Bewerken'><input type='button' value='Verwijderen'> </td></tr>";
+                                    echo "<tr><td>" . $row["DocentVoornaam"] . "</td><td>" . $row["DocentAchternaam"] . "</td><td>" . $row["DocentEmail"] . "</td><td></td><td> <input type='button' name='bewerken' value='Bewerken'><input type='button' value='Verwijderen'> </td></tr>";
                                 }
                                 echo "</table>";
                             }else{
                                 echo "0 result";
                             }
 
-                                    ?>
+                            ?>
+                            <div class="pop-up">
+                              <span>POPUP</span>
+                            </div>
                             </div>
                         </div>
                     </div>
