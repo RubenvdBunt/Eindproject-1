@@ -6,3 +6,15 @@ input{
 div .inputs{
   width: 50%;
 }
+
+#pop-up{
+  position: absolute;
+  height: 300px;
+  width: 500px;
+  background-color: grey;
+  box-shadow: 1px 1px 1px 1px grey;
+  border-radius: 10px;
+  top: 45%;
+  right: 25%;
+  display: none;
+}

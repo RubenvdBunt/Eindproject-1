@@ -25,7 +25,7 @@ include ("includes/header.php");
 
                             if($result-> num_rows > 0){
                                 While($row = $result-> fetch_assoc()){
-                                    echo "<tr><td>" . $row["DocentVoornaam"] . "</td><td>" . $row["DocentAchternaam"] . "</td><td>" . $row["DocentEmail"] . "</td><td></td><td> <input type='button' name='bewerken' value='Bewerken'><input type='button' value='Verwijderen'> </td></tr>";
+                                    echo "<tr><td>" . $row["DocentVoornaam"] . "</td><td>" . $row["DocentAchternaam"] . "</td><td>" . $row["DocentEmail"] . "</td><td></td><td> <input type='button' onclick='popUp()' name='bewerken' value='Bewerken'><input type='button' value='Verwijderen'> </td></tr>";
                                 }
                                 echo "</table>";
                             }else{
@@ -33,8 +33,10 @@ include ("includes/header.php");
                             }
 
                             ?>
-                            <div class="pop-up">
-                              <span>POPUP</span>
+                            <div id="pop-up">
+                              <span>Voornaam: <input type="text"/></span><br/><br/>
+                              <span>Achternaam: <input type="text"/></span><br/><br/>
+                              <span>Email: <input type="text"/></span>
                             </div>
                             </div>
                         </div>
