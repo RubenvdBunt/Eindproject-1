@@ -1,5 +1,5 @@
 <?php
-include ("includes/hea der.php");
+include ("includes/header.php");
  ?>
  <link rel="stylesheet" href="css/docenten.css" >
     <section class="wrapper">
