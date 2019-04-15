@@ -25,7 +25,7 @@ include ("includes/header.php");
                                 $result = $conn-> query($sql);
                                 echo "gelukt";
                             }else{
-                                echo "niet gelukt";
+                                echo "niet gelukt jamer";
                             }
                         ?>
 
