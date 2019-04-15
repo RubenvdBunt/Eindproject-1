@@ -5,7 +5,7 @@ include ("includes/header.php");
             <div class="wthree-font-awesome">
                 <div class="grid_3 grid_4 w3_agileits_icons_page">
                     <div class="icons">
-                        <h2 class="titel">Leerlingen</h2>
+                        <h2 class="titel">Studenten</h2>
 
                             </div>
                         </div>
