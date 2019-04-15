@@ -21,7 +21,7 @@ include ("includes/header.php");
                                 $sSecondName = $_POST['docent_achter'];
                                 $sEmail = $_POST['docent_email'];
 
-                                $sql = "INSERT INTO `docent`(`DocentID`, `DocentVoornaam`, `DocentAchternaam`, `DocentEmail`) VALUES ('', '$sFirstName', '$sSecondName', '$sEmail')";
+                                $sql = "INSERT INTO docent(DocentVoornaam, DocentAchternaam, DocentEmail, KlasID) VALUES ('$sFirstName', '$sSecondName', '$sEmail', '0')";
                                 $result = $conn-> query($sql);
                                 echo "gelukt";
                             }else{

@@ -25,17 +25,13 @@ include ("includes/header.php");
 
                             if($result-> num_rows > 0){
                                 While($row = $result-> fetch_assoc()){
-<<<<<<< HEAD
-                                    echo "<tr><td>" . $row["DocentVoornaam"] . "</td><td>" . $row["DocentAchternaam"] . "</td><td>" . $row["DocentEmail"] . "</td><td></td><td> <input type='button' onclick='popUp()' name='bewerken' value='Bewerken'><input type='button' value='Verwijderen'> </td></tr>";
-=======
                                     echo "<tr>
                                         <td>" . $row["DocentVoornaam"] . "</td><td>" . $row["DocentAchternaam"] . "</td>
                                         <td>" . $row["DocentEmail"] . "</td>
                                         <td>" . $row["KlasID"] ."</td>
                                         <td></td>
-                                        <td> <input type='button' name='bewerken' value='Bewerken'><input type='button' value='Verwijderen'> </td>
+                                        <td> <input type='button' onclick='popUp()' name='bewerken' value='Bewerken'><input type='button' value='Verwijderen'> </td>
                                         </tr>";
->>>>>>> 32ea8e161cbfe05a4d1dd1dc4da009da9fc0340d
                                 }
                                 echo "</table>";
                             }else{
