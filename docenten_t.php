@@ -12,7 +12,7 @@ include ("includes/header.php");
                       <form method="post" action="docenten_t.php">
                         <span>Voornaam: <input type="text" name="docent_voor" required/></span><br/><br/>
                         <span>Achternaam: <input type="text" name="docent_achter" required/></span><br/><br/>
-                        <span>Email: <input type="text" name="docent_email" required/></span><br/><br/>
+                        <span>Email: <input type="email" name="docent_email" required/></span><br/><br/>
                         <button type="submit" name="submit">Voeg toe</button>
                       </form>
 
@@ -25,8 +25,9 @@ include ("includes/header.php");
 
                           $sql = "INSERT INTO `docent`(`DocentID`, `DocentVoornaam`, `DocentAchternaam`, `DocentEmail`) VALUES ('', '$sFirstName', '$sSecondName', '$sEmail')";
                           $result = $conn-> query($sql);
+                        }else{
+                            echo "";
                         }
-
                       ?>
 
                     </div>
