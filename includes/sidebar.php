@@ -31,7 +31,7 @@
                 <li>
                     <a href="leerlingen.php">
                         <i class="fa fa-group"></i>
-                        <span>Leerlingen</span>
+                        <span>Studenten</span>
                     </a>
                 </li>
 

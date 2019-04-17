@@ -4,6 +4,15 @@
 
     $error = '';
     if(isset($_POST['login'])){
+
+        $email = $conn->real_escape_string($_POST['email']);
+        $password = $conn->real_escape_string($_POST['password']);
+
+        $sql = $conn->query("SELECT GebruikerID, GebruikerWachtwoord, FROM gebruiker WEHERE GebruikerEmail='$email'");
+        if($sql->num_rows > 0){
+            z
+        }
+
         if(empty($_POST['email']) || empty($_POST['password'])){
             $error = "Vul alle vlden in.";
             echo $error;
@@ -31,38 +40,24 @@
         }
     }
 ?>
-
-<!--if($rows < 1) {-->
 <!---->
-<!--header("Location: ../login.php?error");-->
-<!--exit();-->
+<!--include_once "conn.php";-->
 <!---->
-<!--}else{-->
+<!--if(isset($_POST['login'])) {-->
 <!---->
-<!--if($rows = mysqli_fetch_assoc($hashedPwdCheck)){-->
+<!--    $email = $conn->real_escape_string($_POST['email']);-->
+<!--    $password = $conn->real_escape_string($_POST['password']);-->
 <!---->
-<!--$hashedPwdCheck = password_verify($password, $row['GebruikerWachtwoord']);-->
-<!---->
-<!--if($hashedPwdCheck == false){-->
-<!---->
-<!--header("Location: ../login.php?error");-->
-<!--exit();-->
-<!---->
-<!--}elseif($hashedPwdCheck == true){-->
-<!---->
-<!--session_start();-->
-<!--$_SESSION['email'] = $email;-->
-<!--header("Location: ../index.php?login=succes");-->
-<!--exit();-->
-<!---->
-<!--}else{-->
-<!---->
-<!--header("Location: ../login.php?error");-->
-<!--exit();-->
-<!--$error = "Ongeldige combinatie.";-->
-<!--echo $error;-->
-<!---->
-<!--}-->
-<!--}-->
-<!--mysqli_close($conn);-->
+<!--    $sql = $conn->query("SELECT `GebruikerID`, `GebruikerWachtwoord` FROM `gebruiker` WEHERE `GebruikerEmail` = '$email'");-->
+<!--    echo $sql;-->
+<!--    if ($sql->num_rows > 0) {-->
+<!--        $data = $sql->fetch_array();-->
+<!--        if (password_verify($password, $data['GebruikerWachtwoord'])) {-->
+<!--            echo "goedzo";-->
+<!--        } else {-->
+<!--            echo "nee";-->
+<!--        }-->
+<!--    }else{-->
+<!--        echo "neenee";-->
+<!--    }-->
 <!--}-->
