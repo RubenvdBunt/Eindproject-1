@@ -23,6 +23,7 @@
                     <input type="password" class="ggg" name="password" placeholder="Wachtwoord" required="">
                     <div class="clearfix"></div>
                     <input type="submit" value="Log in" name="login">
+<!--                    echo password_hash("WACHTWOORD", PASSWORD_DEFAULT);-->
                 </form>
             </div>
         </div>

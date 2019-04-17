@@ -1,64 +1,32 @@
 <?php
 
-    include_once "conn.php";
+include_once "conn.php";
+$output = "";
 
-    $error = '';
-    if(isset($_POST['login'])){
+if(isset($_POST['login'])) {
 
-        $email = $conn->real_escape_string($_POST['email']);
-        $password = $conn->real_escape_string($_POST['password']);
+    $email = $conn->real_escape_string($_POST['email']);
+    $password = $conn->real_escape_string($_POST['password']);
 
-        $sql = $conn->query("SELECT GebruikerID, GebruikerWachtwoord, FROM gebruiker WEHERE GebruikerEmail='$email'");
-        if($sql->num_rows > 0){
-            header("Location: ../login.php?error");
-            exit();
-        }
+    $salted = "afurwhfiudncmisdcjsducjw383wjfwesjn".$password."srgjnvisciwecose";
 
-        if(empty($_POST['email']) || empty($_POST['password'])){
-            $error = "Vul alle vlden in.";
-            echo $error;
-        }
-        else{
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+    $hashed = hash('sha512', $salted);
+//        echo $hashed;
 
-            $query = mysqli_query($conn, "SELECT * FROM gebruiker WHERE GebruikerWachtwoord='$password' AND GebruikerEmail='$email'");
+    $sql = "SELECT * FROM gebruiker WHERE GebruikerEmail ='$email' AND GebruikerWachtwoord = '$hashed'";
+    $result = mysqli_query($conn, $sql) or die("foute sql");
 
-            $rows = mysqli_num_rows($query);
-            if($rows == 1){
-                session_start();
-                $_SESSION['email'] = $email;
-                header("Location: ../index.php?login=succes");
-                exit();
-            }
-            else{
-                header("Location: ../login.php?error");
-                exit();
-                $error = "Ongeldige combinatie.";
-                echo $error;
-            }
-            mysqli_close($conn);
-        }
+    if(mysqli_num_rows($result) > 0){
+        session_start();
+        $_SESSION['email'] = $email;
+        header('Location: ../index.php');
+        exit();
+    }else{
+        header('Location: ../login.php');
+        exit();
     }
+}else{
+    echo "jammer man";
+}
+
 ?>
-<!---->
-<!--include_once "conn.php";-->
-<!---->
-<!--if(isset($_POST['login'])) {-->
-<!---->
-<!--    $email = $conn->real_escape_string($_POST['email']);-->
-<!--    $password = $conn->real_escape_string($_POST['password']);-->
-<!---->
-<!--    $sql = $conn->query("SELECT `GebruikerID`, `GebruikerWachtwoord` FROM `gebruiker` WEHERE `GebruikerEmail` = '$email'");-->
-<!--    echo $sql;-->
-<!--    if ($sql->num_rows > 0) {-->
-<!--        $data = $sql->fetch_array();-->
-<!--        if (password_verify($password, $data['GebruikerWachtwoord'])) {-->
-<!--            echo "goedzo";-->
-<!--        } else {-->
-<!--            echo "nee";-->
-<!--        }-->
-<!--    }else{-->
-<!--        echo "neenee";-->
-<!--    }-->
-<!--}-->
