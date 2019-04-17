@@ -10,7 +10,8 @@
 
         $sql = $conn->query("SELECT GebruikerID, GebruikerWachtwoord, FROM gebruiker WEHERE GebruikerEmail='$email'");
         if($sql->num_rows > 0){
-            z
+            header("Location: ../login.php?error");
+            exit();
         }
 
         if(empty($_POST['email']) || empty($_POST['password'])){
