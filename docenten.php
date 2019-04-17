@@ -30,7 +30,7 @@ include ("includes/header.php");
                                         <td>" . $row["DocentEmail"] . "</td>
                                         <td>" . $row["KlasID"] ."</td>
                                         <td></td>
-                                        <td> <input type='button' onclick='popUp()' name='bewerken' value='Bewerken'><input type='button' value='Verwijderen'> </td>
+                                        <td> <form action='docenten.php' method='post'> <input id='" . $row["DocentID"] . "' type='button' onclick='popUp()' name='bewerken' value='Bewerken'><input type='button' value='Verwijderen'></form> </td>
                                         </tr>";
                                 }
                                 echo "</table>";
@@ -38,12 +38,19 @@ include ("includes/header.php");
                                 echo "0 result";
                             }
 
+                            if(isset($_POST['bewerken'])){
+                              $ID = $_GET['id'];
+                              $sqlinput = "SELECT * FROM docent WHERE DocentID = ". $ID ."";
+                              $resultinput = $conn-> query($sqlinput);
+                              While($rowinput = $resultinput-> fetch_assoc()){
+                                  echo "<div id='pop-up'>
+                                      <span>Voornaam: <input type='text' value='" . $rowinput["DocentVoornaam"] . "'/></span><br/><br/>
+                                      <span>Achternaam: <input type='text' value='" . $rowinput["DocentAchternaam"] . "'/></span><br/><br/>
+                                      <span>Email: <input type='text' value='" . $rowinput["DocentEmail"] . "'/></span>
+                                      </div>";
+                              }
+                            }
                             ?>
-                            <div id="pop-up">
-                              <span>Voornaam: <input type="text"/></span><br/><br/>
-                              <span>Achternaam: <input type="text"/></span><br/><br/>
-                              <span>Email: <input type="text"/></span>
-                            </div>
                             </div>
                         </div>
                     </div>
