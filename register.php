@@ -1,12 +1,12 @@
 <?php
     include_once "includes/conn.php";
-    if(isset($_POST['email'])){
-        $email = mysqli_real_escape_string($_POST['email']);
-        $password1 = mysqli_real_escape_string($_POST['password1']);
-        $password2 = $_POST['password2'];
-
-
-    }
+//    if(isset($_POST['email'])){
+//        $email = mysqli_real_escape_string($_POST['email']);
+//        $password1 = mysqli_real_escape_string($_POST['password1']);
+//        $password2 = $_POST['password2'];
+//
+//
+//    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,8 @@
         <div class="log-w3">
             <div class="w3layouts-main">
                 <h2>Registreer</h2>
-                <form action="" method="post">
+                <form action="includes/register_check.php" method="post">
+                    <input type="text" class="ggg" name="gebruikersnaam" placeholder="Gebruikersnaam" required="">
                     <input type="email" class="ggg" name="email" placeholder="E-mail:" required="">
                     <input type="password" class="ggg" name="password1" placeholder="Wachtwoord:" required="">
                     <input type="password" class="ggg" name="password2" placeholder="Wachtwoord herhalen:" required="">
