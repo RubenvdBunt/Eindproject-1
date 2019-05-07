@@ -7,14 +7,3 @@
 <script src="js/jquery.slimscroll.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
 <script src="js/jquery.scrollTo.js"></script>
-
-<script>
-function popUp() {
-  var x = document.getElementById("pop-up");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
