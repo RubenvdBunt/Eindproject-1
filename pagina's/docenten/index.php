@@ -1,8 +1,8 @@
 <?php
-include ("includes/header.php");
+include ("../../includes/header.php");
  ?>
 
- <link rel="stylesheet" href="css/docenten.css" >
+ <link rel="stylesheet" href="../../css/docenten.css" >
         <section class="wrapper">
             <div class="wthree-font-awesome">
                 <div class="grid_3 grid_4 w3_agileits_icons_page">
@@ -44,10 +44,10 @@ include ("includes/header.php");
                     </div>
                 </section>
                 <?php
-                    include("includes/footer.php");
+                    include("../../includes/footer.php");
                 ?>
             </section>
             <?php
-                include_once "includes/script.php";
+                include_once "../../includes/script.php";
             ?>
         </section>
