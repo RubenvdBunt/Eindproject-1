@@ -5,7 +5,7 @@
 
                 <!-- Hoofdscherm -->
                 <li>
-                    <a href="../../pagina/home/index.php">
+                    <a href="../../index.php">
                         <i class="fa fa-home"></i>
                         <span>Hoofdscherm</span>
                     </a>
@@ -13,7 +13,7 @@
 
                 <!-- Klassen -->
                 <li>
-                    <a href="../../pagina/klassen/index.php">
+                    <a href="../../pagina's/klassen/index.php">
                         <i class="fa fa-group"></i>
                         <span>Klassen</span>
                     </a>
@@ -21,13 +21,13 @@
 
                 <!-- Docenten -->
                 <li>
-                    <a href="../../pagina/docenten/index.php">
+                    <a href="../../pagina's/docenten/index.php">
                         <i class="fa fa-group"></i>
                         <span>Docenten</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../../pagina/teachers/index.php">
+                    <a href="../../pagina's/teachers/index.php">
                         <i class="fa fa-group"></i>
                         <span>Teachers</span>
                     </a>
@@ -35,7 +35,7 @@
 
                 <!-- Leerlingen -->
                 <li>
-                    <a href="../../pagina/leerlingen/index.php">
+                    <a href="../../pagina's/leerlingen/index.php">
                         <i class="fa fa-group"></i>
                         <span>Studenten</span>
                     </a>
@@ -43,7 +43,7 @@
 
                 <!-- Font Awesome -->
                 <li>
-                    <a href="../../pagina/fontawesome/fontawesome.php">
+                    <a href="../../pagina's/fontawesome/fontawesome.php">
                         <i class="fa fa-asl-interpreting"></i>
                         <span>Font awesome </span>
                     </a>
