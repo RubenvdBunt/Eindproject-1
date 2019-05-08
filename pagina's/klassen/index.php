@@ -1,17 +1,17 @@
 <?php
-include ("includes/header.php");
+include ("../../includes/header.php");
  ?>
 <!DOCTYPE html>
 <html>
     <body>
         <section id="container">
             <?php
-            include_once "includes/logo.php";
-            include_once "includes/navbar.php";
+            include_once "../../includes/logo.php";
+            include_once "../../includes/navbar.php";
             ?>
             </header>
             <?php
-            include_once "includes/sidebar.php";
+            include_once "../../includes/sidebar.php";
             ?>
 
             <section id="main-content">
@@ -46,11 +46,11 @@ include ("includes/header.php");
                     </div>
                 </section>
                 <?php
-                    include("includes/footer.php");
+                    include("../../includes/footer.php");
                 ?>
             </section>
             <?php
-                include_once "includes/script.php";
+                include_once "../../includes/script.php";
             ?>
         </section>
     </body>
