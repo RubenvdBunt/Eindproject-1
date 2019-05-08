@@ -29,7 +29,7 @@
 
                 <!-- Leerlingen -->
                 <li>
-                    <a href="leerlingen.php">
+                    <a href="studenten.php">
                         <i class="fa fa-group"></i>
                         <span>Studenten</span>
                     </a>
