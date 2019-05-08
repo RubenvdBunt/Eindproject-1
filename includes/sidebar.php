@@ -5,7 +5,7 @@
 
                 <!-- Hoofdscherm -->
                 <li>
-                    <a href="../../index.php">
+                    <a href="../../pagina/home/index.php">
                         <i class="fa fa-home"></i>
                         <span>Hoofdscherm</span>
                     </a>
