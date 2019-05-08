@@ -1,0 +1,7 @@
+RewriteEngine On
+
+#redirect:
+#RewriteRule ^pagina/home/$ /home/ [R=301,L]
+
+#laat iets anders zien:
+#RewriteRule ^/home/ pagina/home/ [QSA,L]
