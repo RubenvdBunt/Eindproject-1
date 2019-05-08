@@ -1,5 +1,5 @@
 <?php
-include ("../../includes/header.php");
+include ("includes/header.php");
  ?>
         <section class="wrapper">
             <div class="wthree-font-awesome">
@@ -12,11 +12,11 @@ include ("../../includes/header.php");
                     </div>
                 </section>
                 <?php
-                    include("../../includes/footer.php");
+                    include("includes/footer.php");
                 ?>
             </section>
             <?php
-                include_once "../../includes/script.php";
+                include_once "includes/script.php";
             ?>
         </section>
     </body>
