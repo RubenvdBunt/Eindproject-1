@@ -22,7 +22,7 @@
                     <input type="email" class="ggg" name="email" placeholder="E-mail" required="">
                     <input type="password" class="ggg" name="password" placeholder="Wachtwoord" required="">
                     <div class="clearfix"></div>
-                    <input type="submit" value="Log in" name="login">
+                    <input type="submit" class="submit" value="Log in" name="login">
 <!--                    echo password_hash("WACHTWOORD", PASSWORD_DEFAULT);-->
                 </form>
             </div>
