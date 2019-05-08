@@ -1,10 +1,9 @@
 <?php
 
 //fetch.php
+include("includes/conn.php");
 
-include("database_connection.php");
-
-$query = "SELECT * FROM tbl_sample";
+$query = "SELECT * FROM docent";
 $statement = $connect->prepare($query);
 $statement->execute();
 $result = $statement->fetchAll();
@@ -14,6 +13,7 @@ $output = '
 	<tr>
 		<th>First Name</th>
 		<th>Last Name</th>
+		<th>Email</th>
 		<th>Edit</th>
 		<th>Delete</th>
 	</tr>
@@ -24,13 +24,14 @@ if($total_row > 0)
 	{
 		$output .= '
 		<tr>
-			<td width="40%">'.$row["first_name"].'</td>
-			<td width="40%">'.$row["last_name"].'</td>
+			<td width="40%">'.$row["DocentVoornaam"].'</td>
+			<td width="40%">'.$row["DocentAchternaam"].'</td>
+			<td width="40%">'.$row["DocentEmail"].'</td>
 			<td width="10%">
-				<button type="button" name="edit" class="btn btn-primary btn-xs edit" id="'.$row["id"].'">Edit</button>
+				<button type="button" name="edit" class="btn btn-primary btn-xs edit" id="'.$row["DocentID"].'">Edit</button>
 			</td>
 			<td width="10%">
-				<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["id"].'">Delete</button>
+				<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["DocentID"].'">Delete</button>
 			</td>
 		</tr>
 		';

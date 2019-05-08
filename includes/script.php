@@ -7,6 +7,8 @@
 <script src="js/jquery.slimscroll.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
 <script src="js/jquery.scrollTo.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.js"></script>
 
 <script>
 function popUp() {

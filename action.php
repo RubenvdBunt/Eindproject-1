@@ -2,14 +2,14 @@
 
 //action.php
 
-include('database_connection.php');
+include('includes/conn.php');
 
 if(isset($_POST["action"]))
 {
 	if($_POST["action"] == "insert")
 	{
 		$query = "
-		INSERT INTO tbl_sample (first_name, last_name) VALUES ('".$_POST["first_name"]."', '".$_POST["last_name"]."')
+		INSERT INTO docent (DocentVoornaam, DocentAchternaam, DocentEmail) VALUES ('".$_POST["first_name"]."', '".$_POST["last_name"]."','".$_POST["email"]."')
 		";
 		$statement = $connect->prepare($query);
 		$statement->execute();
@@ -18,25 +18,27 @@ if(isset($_POST["action"]))
 	if($_POST["action"] == "fetch_single")
 	{
 		$query = "
-		SELECT * FROM tbl_sample WHERE id = '".$_POST["id"]."'
+		SELECT * FROM docent WHERE DocentID = '".$_POST["DocentID"]."'
 		";
 		$statement = $connect->prepare($query);
 		$statement->execute();
 		$result = $statement->fetchAll();
 		foreach($result as $row)
 		{
-			$output['first_name'] = $row['first_name'];
-			$output['last_name'] = $row['last_name'];
+			$output['first_name'] = $row['DocentVoornaam'];
+			$output['last_name'] = $row['DocentAchternaam'];
+			$output['email'] = $row['DocentEmail'];
 		}
 		echo json_encode($output);
 	}
 	if($_POST["action"] == "update")
 	{
 		$query = "
-		UPDATE tbl_sample
-		SET first_name = '".$_POST["first_name"]."',
-		last_name = '".$_POST["last_name"]."'
-		WHERE id = '".$_POST["hidden_id"]."'
+		UPDATE docent
+		SET DocentVoornaam = '".$_POST["first_name"]."',
+		DocentAchternaam = '".$_POST["last_name"]."',
+		DocentEmail = '".$_POST["email"]."'
+		WHERE DocentID = '".$_POST["hidden_id"]."'
 		";
 		$statement = $connect->prepare($query);
 		$statement->execute();
@@ -44,7 +46,7 @@ if(isset($_POST["action"]))
 	}
 	if($_POST["action"] == "delete")
 	{
-		$query = "DELETE FROM tbl_sample WHERE id = '".$_POST["id"]."'";
+		$query = "DELETE FROM docent WHERE DocentID = '".$_POST["id"]."'";
 		$statement = $connect->prepare($query);
 		$statement->execute();
 		echo '<p>Data Deleted</p>';

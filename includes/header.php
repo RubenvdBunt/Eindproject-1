@@ -18,10 +18,11 @@ if(isset($_SESSION["email"])){
 <html>
 <head>
     <title>Eindproject leerjaar 2</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" >
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/style-responsive.css" rel="stylesheet"/>
-    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
   <section id="container">

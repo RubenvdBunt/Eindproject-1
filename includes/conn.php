@@ -5,6 +5,7 @@
     $dbName = "eindopdracht";
 
 $conn = mysqli_connect("localhost","root","","eindopdracht");
+$connect = new PDO("mysql:host=localhost;dbname=eindopdracht", "root", "");
 
 // Check connection
 if (mysqli_connect_errno())
