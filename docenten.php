@@ -30,7 +30,7 @@ include ("includes/header.php");
     				</div>
             <div class="form-group">
     					<label>Email:</label>
-    					<input type="text" name="email" id="email" class="form-control" />
+    					<input type="email" name="email" id="email" class="form-control" />
     					<span id="error_email" class="text-danger"></span>
     				</div>
     				<div class="form-group">
@@ -122,7 +122,7 @@ include ("includes/header.php");
         if($('#email').val() == '')
     		{
     			error_email = 'Email is verplicht.';
-    			$('#error_email').text(error_last_name);
+    			$('#error_email').text(error_email);
     			$('#email').css('border-color', '#cc0000');
     		}
     		else
