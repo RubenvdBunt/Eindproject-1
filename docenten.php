@@ -2,11 +2,11 @@
 include ("includes/header.php");
  ?>
 
-            <div class="container">
+      <section class="wrapper">
+        <div class="container">
     			<br />
 
     			<h3 align="center">Docenten</a></h3><br />
-    			<br />
     			<div align="right" style="margin-bottom:5px;">
     			<button type="button" name="add" id="add" class="btn btn-success btn-xs">Toevoegen</button>
     			</div>
@@ -57,7 +57,7 @@ include ("includes/header.php");
       include_once "includes/script.php";
       ?>
     </section>
-
+  </section>
 
     <script>
     $(document).ready(function(){
@@ -167,7 +167,7 @@ include ("includes/header.php");
     		$.ajax({
     			url:"action.php",
     			method:"POST",
-    			data:{id:id, action:action},
+    			data:{DocentID:id, action:action},
     			dataType:"json",
     			success:function(data)
     			{

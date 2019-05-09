@@ -13,7 +13,7 @@ if(isset($_POST["action"]))
 		";
 		$statement = $connect->prepare($query);
 		$statement->execute();
-		echo '<p>Data Inserted...</p>';
+		echo '<p>Data toegevoegd...</p>';
 	}
 	if($_POST["action"] == "fetch_single")
 	{
@@ -42,14 +42,14 @@ if(isset($_POST["action"]))
 		";
 		$statement = $connect->prepare($query);
 		$statement->execute();
-		echo '<p>Data Updated</p>';
+		echo '<p>Data updated</p>';
 	}
 	if($_POST["action"] == "delete")
 	{
 		$query = "DELETE FROM docent WHERE DocentID = '".$_POST["id"]."'";
 		$statement = $connect->prepare($query);
 		$statement->execute();
-		echo '<p>Data Deleted</p>';
+		echo '<p>Data verwijderd</p>';
 	}
 }
 
