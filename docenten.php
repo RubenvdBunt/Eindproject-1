@@ -67,7 +67,7 @@ include ("includes/header.php");
     	function load_data()
     	{
     		$.ajax({
-    			url:"fetch.php",
+    			url:"fetch-docent.php",
     			method:"POST",
     			success:function(data)
     			{
@@ -141,7 +141,7 @@ include ("includes/header.php");
     			$('#form_action').attr('disabled', 'disabled');
     			var form_data = $(this).serialize();
     			$.ajax({
-    				url:"action.php",
+    				url:"action-docent.php",
     				method:"POST",
     				data:form_data,
     				success:function(data)
@@ -165,7 +165,7 @@ include ("includes/header.php");
     		var id = $(this).attr('id');
     		var action = 'fetch_single';
     		$.ajax({
-    			url:"action.php",
+    			url:"action-docent.php",
     			method:"POST",
     			data:{DocentID:id, action:action},
     			dataType:"json",
@@ -191,7 +191,7 @@ include ("includes/header.php");
     				var id = $(this).data('id');
     				var action = 'delete';
     				$.ajax({
-    					url:"action.php",
+    					url:"action-docent.php",
     					method:"POST",
     					data:{id:id, action:action},
     					success:function(data)
