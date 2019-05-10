@@ -26,7 +26,7 @@ if(isset($_POST['login'])) {
         exit();
     }
 }else{
-//    echo "jammer man";
+//    echo "Er is iets fout gegaan met het inloggen.";
 }
 
 ?>
