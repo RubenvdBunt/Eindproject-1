@@ -14,6 +14,7 @@ $output = '
 		<th>Voornaam</th>
 		<th>Achternaam</th>
 		<th>Email</th>
+		<th>Mentor klas</th>
 		<th>Bewerken</th>
 		<th>Verwijderen</th>
 	</tr>
@@ -27,6 +28,7 @@ if($total_row > 0)
 			<td width="40%">'.$row["DocentVoornaam"].'</td>
 			<td width="40%">'.$row["DocentAchternaam"].'</td>
 			<td width="40%">'.$row["DocentEmail"].'</td>
+			<td width="40%">'.$row["KlasNaam"].'</td>
 			<td width="10%">
 				<button type="button" name="edit" class="btn btn-primary btn-xs edit" id="'.$row["DocentID"].'">Bewerken</button>
 			</td>
