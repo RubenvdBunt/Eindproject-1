@@ -42,7 +42,9 @@ if(isset($_SESSION["email"])){
                         <div class="grid_3 grid_4 w3_agileits_icons_page">
                             <div class="icons">
                                 <h2 class="titel">Welkom!</h2>
-
+<?php
+    echo $_SESSION['BeheerderSession'];
+?>
                             </div>
                         </div>
                     </div>
