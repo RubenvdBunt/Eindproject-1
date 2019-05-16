@@ -21,10 +21,25 @@ if($total_row > 0)
 {
 	foreach($result as $row)
 	{
+		$query1 = 'SELECT d.DocentVoornaam, d.DocentAchternaam FROM docent d LEFT JOIN klas k ON d.DocentID = k.DocentID WHERE d.DocentID = '.$row['DocentID'].'';
+		$statement_docent = $connect->prepare($query1);
+		$statement_docent->execute();
+		$result1 = $statement_docent->fetchAll();
+
+		if(empty($result1)){
+			$voor = "Geen";
+			$achter = "mentor";
+		}
+		else{
+			$voor = $result1["0"]["DocentVoornaam"];
+			$achter = $result1["0"]["DocentAchternaam"];
+		}
+
+
 		$output .= '
 		<tr>
 			<td width="40%">'.$row["KlasNaam"].'</td>
-			<td width="40%">'.$row["DocentID"].'</td>
+			<td width="40%">'.$voor.' '.$achter.'</td>
 			<td width="10%">
 				<button type="button" name="edit" class="btn btn-primary btn-xs edit" id="'.$row["KlasID"].'">Bewerken</button>
 			</td>

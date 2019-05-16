@@ -34,7 +34,7 @@ include ("includes/header.php");
               		$mentor_result = $mentor_statement->fetchAll();
 
                   foreach ($mentor_result as $value) {
-                      echo "<option value='".$value['DocentID']."'>".$value['DocentVoornaam']."</option>";
+                      echo "<option value='".$value['DocentID']."'>".$value['DocentVoornaam']." ".$value['DocentAchternaam']."</option>";
                   }
                 ?>
               </select>
