@@ -45,8 +45,8 @@ include ("includes/header.php");
 
     		</div>
 
-    		<div id="delete_confirmation" title="Confirmation">
-    		<p>Weet je zeker dat je het wilt verwijderen?</p>
+    		<div id="delete_confirmation" title="Verwijderen?">
+    		<p>Weet je zeker dat je deze docent wilt verwijderen?</p>
     		</div>
 
         <?php
@@ -187,7 +187,7 @@ include ("includes/header.php");
     		autoOpen:false,
     		modal: true,
     		buttons:{
-    			Ok : function(){
+    			Ja : function(){
     				var id = $(this).data('id');
     				var action = 'delete';
     				$.ajax({
@@ -203,7 +203,7 @@ include ("includes/header.php");
     					}
     				});
     			},
-    			Cancel : function(){
+    			Annuleren : function(){
     				$(this).dialog('close');
     			}
     		}
