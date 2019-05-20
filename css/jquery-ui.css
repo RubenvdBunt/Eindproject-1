@@ -516,6 +516,7 @@ button.ui-button::-moz-focus-inner {
 	height: 20px;
 }
 .ui-dialog .ui-dialog-content {
+	max-height: 400px !important;
 	position: relative;
 	border: 0;
 	padding: .5em 1em;
@@ -897,6 +898,8 @@ body .ui-tooltip {
 	font-size: 1em;
 }
 .ui-widget.ui-widget-content {
+	left:calc(50% - 200px) !important;
+	top: 100px !important;
 	border: 1px solid #c5c5c5;
 }
 .ui-widget-content {
