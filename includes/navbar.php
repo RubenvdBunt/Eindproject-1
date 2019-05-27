@@ -4,7 +4,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="">
                 <i class="fa fa-cog"></i>
-                <span class="username">(Naam)</span>
+                <span class="username"><?php echo $_SESSION['email'] ?></span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">

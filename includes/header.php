@@ -30,7 +30,7 @@ if(isset($_SESSION["email"])){
       include_once "includes/logo.php";
       include_once "includes/navbar.php";
       ?>
-      </header>
+    </header>
       <?php
       include_once "includes/sidebar.php";
       ?>
