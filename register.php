@@ -26,7 +26,6 @@
             <div class="w3layouts-main">
                 <h2>Registreer</h2>
                 <form action="includes/register_check.php" method="post">
-                    <input type="text" class="ggg" name="gebruikersnaam" placeholder="Gebruikersnaam" required="">
                     <input type="email" class="ggg" name="email" placeholder="E-mail:" required="">
                     <input type="password" class="ggg" name="password1" placeholder="Wachtwoord:" required="">
                     <input type="password" class="ggg" name="password2" placeholder="Wachtwoord herhalen:" required="">
