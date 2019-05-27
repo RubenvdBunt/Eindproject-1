@@ -9,7 +9,17 @@ if(isset($_POST["action"]))
 	if($_POST["action"] == "insert")
 	{
 		$query = "
-		INSERT INTO `student` (`StudentVoornaam`, `StudentAchternaam`, `StudentTussenvoegsel`, `StudentAdres`, `StudentPlaats`, `StudentPostcode`, `StudentGeboortedatum`, `StudentEmail`) VALUES ('".$_POST["student_first_name"]."', '".$_POST["student_second_name"]."', '".$_POST["student_insertion"]."', '".$_POST["student_adres"]."', '".$_POST["student_place"]."', '".$_POST["student_mailnr"]."', '".$_POST["student_birth"]."', '".$_POST["student_email"]."')
+		INSERT INTO `student` (`KlasID`, `StudentVoornaam`, `StudentAchternaam`, `StudentTussenvoegsel`, `StudentAdres`, `StudentPlaats`, `StudentPostcode`, `StudentGeboortedatum`, `StudentEmail`)
+		VALUES
+		('".$_POST["class_name"]."',
+		'".$_POST["student_first_name"]."',
+		'".$_POST["student_second_name"]."',
+		'".$_POST["student_insertion"]."',
+		'".$_POST["student_adres"]."',
+		'".$_POST["student_place"]."',
+		'".$_POST["student_mailnr"]."',
+		'".$_POST["student_birth"]."',
+		'".$_POST["student_email"]."')
 		";
 		$statement = $connect->prepare($query);
 		$statement->execute();
@@ -33,6 +43,7 @@ if(isset($_POST["action"]))
 			$output['student_mailnr'] = $row['StudentPostcode'];
 			$output['student_birth'] = $row['StudentGeboortedatum'];
 			$output['student_email'] = $row['StudentEmail'];
+			$output['class_name'] = $row['KlasID'];
 		}
 		echo json_encode($output);
 	}
@@ -40,7 +51,8 @@ if(isset($_POST["action"]))
 	{
 		$query = "
 		UPDATE `student`
-		SET `StudentVoornaam` = '".$_POST["student_first_name"]."',
+		SET `KlasID` = '".$_POST["class_name"]."',
+		`StudentVoornaam` = '".$_POST["student_first_name"]."',
 		`StudentAchternaam` = '".$_POST["student_second_name"]."',
 		`StudentTussenvoegsel` = '".$_POST["student_insertion"]."',
 		`StudentAdres` = '".$_POST["student_adres"]."',
@@ -50,7 +62,7 @@ if(isset($_POST["action"]))
 		`StudentEmail` = '".$_POST["student_email"]."'
 		WHERE StudentID = '".$_POST["hidden_id"]."'
 		";
-		
+
 		$statement = $connect->prepare($query);
 		$statement->execute();
 		echo '<p>Data updated</p>';

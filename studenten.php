@@ -58,6 +58,23 @@ include ("includes/header.php");
     					<input type="email" name="student_email" id="email" class="form-control" />
     					<span id="error_email" class="text-danger"></span>
     				</div>
+            <div class="form-group">
+    					<label>Klas:</label>
+              <select name="class_name" id="class_name" class="form-control">
+                <option value="0">Geen klas</option>
+                <?php
+                  $class_query = "SELECT * FROM klas";
+                  $class_statement = $connect->prepare($class_query);
+              		$class_statement->execute();
+              		$class_result = $class_statement->fetchAll();
+
+                  foreach ($class_result as $value) {
+                      echo "<option value='".$value['KlasID']."'>".$value['KlasNaam']."</option>";
+                  }
+                 ?>
+              </select>
+    				</div>
+
     				<div class="form-group">
     					<input type="hidden" name="action" id="action" value="insert" />
     					<input type="hidden" name="hidden_id" id="hidden_id" />
@@ -258,6 +275,7 @@ include ("includes/header.php");
     				$('#mailnr').val(data.student_mailnr);
     				$('#birth').val(data.student_birth);
     				$('#email').val(data.student_email);
+            $('#class_name').val(data.class_name);
     				$('#user_dialog').attr('title', 'Edit Data');
     				$('#action').val('update');
     				$('#hidden_id').val(id);

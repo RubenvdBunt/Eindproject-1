@@ -40,6 +40,7 @@ if($total_row > 0)
 			$voor = $result1["0"]["KlasNaam"];
 		}
 
+		$row["StudentGeboortedatum"] = date("d-m-Y", strtotime($row["StudentGeboortedatum"]));
 
 		$output .= '
 		<tr>

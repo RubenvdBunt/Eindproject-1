@@ -38,8 +38,6 @@ include ("includes/header.php");
                   }
                 ?>
               </select>
-    					<!-- <input type="text" name="teacher_name" id="teacher_name" class="form-control" /> -->
-    					<!-- <span id="error_teacher_name" class="text-danger"></span> -->
     				</div>
     				<div class="form-group">
     					<input type="hidden" name="action" id="action" value="insert" />
@@ -100,7 +98,6 @@ include ("includes/header.php");
     	$('#user_form').on('submit', function(event){
     		event.preventDefault();
     		var error_class_name = '';
-    		var error_teacher_name = '';
     		if($('#class_name').val() == '')
     		{
     			error_class_name = 'Voornaam is verplicht.';
@@ -113,21 +110,9 @@ include ("includes/header.php");
     			$('#error_class_name').text(error_class_name);
     			$('#class_name').css('border-color', '');
     		}
-    		if($('#teacher_name').val() == '')
-    		{
-    			error_teacher_name = 'Achternaam is verplicht.';
-    			$('#error_teacher_name').text(error_teacher_name);
-    			$('#teacher_name').css('border-color', '#cc0000');
-    		}
-    		else
-    		{
-    			error_teacher_name = '';
-    			$('#error_teacher_name').text(error_teacher_name);
-    			$('#teacher_name').css('border-color', '');
-    		}
 
 
-    		if(error_class_name != '' || error_teacher_name != '')
+    		if(error_class_name != '')
     		{
     			return false;
     		}
