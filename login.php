@@ -25,9 +25,6 @@
                     <input type="submit" class="submit" value="Log in" name="login">
 <!--                    echo password_hash("WACHTWOORD", PASSWORD_DEFAULT);-->
                 </form>
-                <form action="register.php" method="post">
-                    <input type="submit" class="submit" value="Account aanmaken" name="login">
-                </form>
             </div>
         </div>
         <script src="js/bootstrap.js"></script>
