@@ -8,8 +8,22 @@ if(isset($_POST["action"]))
 {
 	if($_POST["action"] == "insert")
 	{
+		$salted = "afurwhfiudncmisdcjsducjw383wjfwesjn".$_POST["wachtwoord"]."srgjnvisciwecose";
+		$hashed = hash('sha512', $salted);
+
+		$account_query = "
+		INSERT INTO gebruiker (GebruikerEmail, Gebruikerwachtwoord, DocentSession) VALUES ('".$_POST["email"]."', '".$hashed."','1')
+		";
+		$account_statement = $connect->prepare($account_query);
+		$account_statement->execute();
+
+		$gebruikerid_result = $connect->prepare('SELECT GebruikerID FROM gebruiker ORDER BY GebruikerID DESC LIMIT 1');
+		$gebruikerid_result->execute();
+		$gebruikerid_result = $gebruikerid_result->fetchAll(PDO::FETCH_ASSOC);
+
+
 		$query = "
-		INSERT INTO docent (DocentVoornaam, DocentAchternaam, DocentEmail) VALUES ('".$_POST["first_name"]."', '".$_POST["last_name"]."','".$_POST["email"]."')
+		INSERT INTO docent (GebruikerID, DocentVoornaam, DocentAchternaam, DocentEmail) VALUES ('".$gebruikerid_result['0']['GebruikerID']."','".$_POST["first_name"]."', '".$_POST["last_name"]."','".$_POST["email"]."')
 		";
 		$statement = $connect->prepare($query);
 		$statement->execute();
@@ -46,9 +60,9 @@ if(isset($_POST["action"]))
 	}
 	if($_POST["action"] == "delete")
 	{
-		$query = "DELETE FROM docent WHERE DocentID = '".$_POST["id"]."'";
-		$statement = $connect->prepare($query);
-		$statement->execute();
+		$gebruiker_query = "DELETE gebruiker.*, docent.* FROM gebruiker LEFT JOIN docent ON gebruiker.GebruikerID = docent.GebruikerID WHERE docent.DocentID = '".$_POST["id"]."'";
+		$gebruiker_statement = $connect->prepare($gebruiker_query);
+		$gebruiker_statement->execute();
 		echo '<p>Data verwijderd</p>';
 	}
 }
