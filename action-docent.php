@@ -12,7 +12,7 @@ if(isset($_POST["action"]))
 		$hashed = hash('sha512', $salted);
 
 		$account_query = "
-		INSERT INTO gebruiker (GebruikerEmail, Gebruikerwachtwoord, DocentSession) VALUES ('".$_POST["email"]."', '".$hashed."','1')
+		INSERT INTO gebruiker (GebruikerEmail, GebruikerWachtwoord, DocentSession) VALUES ('".$_POST["email"]."', '".$hashed."','1')
 		";
 		$account_statement = $connect->prepare($account_query);
 		$account_statement->execute();
