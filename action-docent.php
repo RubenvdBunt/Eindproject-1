@@ -60,9 +60,9 @@ if(isset($_POST["action"]))
 	}
 	if($_POST["action"] == "delete")
 	{
-		$gebruiker_query = "DELETE gebruiker.*, docent.* FROM gebruiker LEFT JOIN docent ON gebruiker.GebruikerID = docent.GebruikerID WHERE docent.DocentID = '".$_POST["id"]."'";
-		$gebruiker_statement = $connect->prepare($gebruiker_query);
-		$gebruiker_statement->execute();
+		$query = "DELETE gebruiker.*, docent.* FROM gebruiker LEFT JOIN docent ON gebruiker.GebruikerID = docent.GebruikerID WHERE docent.DocentID = '".$_POST["id"]."'";
+		$statement = $connect->prepare($query);
+		$statement->execute();
 		echo '<p>Data verwijderd</p>';
 	}
 }
