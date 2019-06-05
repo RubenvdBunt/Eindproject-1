@@ -41,9 +41,21 @@ if(isset($_SESSION["email"])){
                     <div class="wthree-font-awesome">
                         <div class="grid_3 grid_4 w3_agileits_icons_page">
                             <div class="icons">
-                                <h2 class="titel">Welkom!</h2>
+                                <?php
+                                if($_SESSION["BeheerderSession"] > 0){ ?>
+                                    <h2 class="titel">Welkom beheerder!</h2>
+                                <?php }else if($_SESSION["DocentSession"] > 0){ ?>
+                                    <h2 class="titel">Welkom docent!</h2>
+                                <?php }else if($_SESSION["StudentSession"] > 0) { ?>
+                                    <h2 class="titel">Welkom student!</h2>
+                                <?php }else{
+                                    echo"Welkom!";
+                                }
+                                ?>
+
                             </div>
                         </div>
+                        <p>hallo</p>
                     </div>
                 </section>
                 <?php
