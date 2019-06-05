@@ -74,7 +74,16 @@ include ("includes/header.php");
                  ?>
               </select>
     				</div>
-
+            <div class="form-group">
+    					<label class="wachtwoord">Wachtwoord:</label>
+    					<input type="password" name="wachtwoord" id="wachtwoord" class="wachtwoord form-control" />
+    					<span id="error_wachtwoord" class="text-danger"></span>
+    				</div>
+            <div class="form-group">
+    					<label class="wachtwoord">Herhaal wachtwoord:</label>
+    					<input type="password" name="hwachtwoord" id="hwachtwoord" class="wachtwoord form-control" />
+    					<span id="error_hwachtwoord" class="text-danger"></span>
+    				</div>
     				<div class="form-group">
     					<input type="hidden" name="action" id="action" value="insert" />
     					<input type="hidden" name="hidden_id" id="hidden_id" />
@@ -130,6 +139,7 @@ include ("includes/header.php");
     		$('#user_form')[0].reset();
     		$('#form_action').attr('disabled', false);
     		$("#user_dialog").dialog('open');
+        $('.wachtwoord').show();
     	});
 
     	$('#user_form').on('submit', function(event){
@@ -142,6 +152,8 @@ include ("includes/header.php");
         var error_mailnr = '';
         var error_birth = '';
         var error_email = '';
+        var error_wachtwoord = '';
+        var error_hwachtwoord = '';
 
     		if($('#first_name').val() == '')
     		{
@@ -227,8 +239,38 @@ include ("includes/header.php");
     			$('#error_email').text(error_email);
     			$('#email').css('border-color', '');
     		}
+        if($('#wachtwoord').val() == '')
+    		{
+    			error_wachtwoord = 'Wachtwoord is verplicht.';
+    			$('#error_wachtwoord').text(error_wachtwoord);
+    			$('#wachtwoord').css('border-color', '#cc0000');
+    		}
+    		else
+    		{
+    			error_wachtwoord = '';
+    			$('#error_wachtwoord').text(error_wachtwoord);
+    			$('#wachtwoord').css('border-color', '');
+    		}
+        if($('#hwachtwoord').val() == '')
+    		{
+    			error_hwachtwoord = 'Wachtwoord herhaling is verplicht.';
+    			$('#error_hwachtwoord').text(error_hwachtwoord);
+    			$('#hwachtwoord').css('border-color', '#cc0000');
+    		}
+        else if($('#hwachtwoord').val() != $('#wachtwoord').val())
+        {
+          error_hwachtwoord = 'Wachtwoorden komen niet overheen.';
+          $('#error_hwachtwoord').text(error_hwachtwoord);
+    			$('#hwachtwoord').css('border-color', '#cc0000');
+        }
+    		else
+    		{
+    			error_hwachtwoord = '';
+    			$('#error_hwachtwoord').text(error_hwachtwoord);
+    			$('#hwachtwoord').css('border-color', '');
+    		}
 
-    		if(error_first_name != '' || error_second_name != '' || error_adres != '' || error_place != '' || error_mailnr != '' || error_birth != '' || error_email != '')
+    		if(error_first_name != '' || error_second_name != '' || error_adres != '' || error_place != '' || error_mailnr != '' || error_birth != '' || error_email != '' || error_hwachtwoord != '' || error_wachtwoord != '')
     		{
     			return false;
     		}
@@ -276,6 +318,7 @@ include ("includes/header.php");
     				$('#birth').val(data.student_birth);
     				$('#email').val(data.student_email);
             $('#class_name').val(data.class_name);
+            $('.wachtwoord').hide();
     				$('#user_dialog').attr('title', 'Edit Data');
     				$('#action').val('update');
     				$('#hidden_id').val(id);
