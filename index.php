@@ -56,6 +56,10 @@ if(isset($_SESSION["email"])){
                             </div>
                         </div>
                         <p>hallo</p>
+                        <?php
+                            echo $_SESSION["BeheerderSession"];
+                        ?>
+
                     </div>
                 </section>
                 <?php

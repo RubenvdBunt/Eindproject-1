@@ -1,5 +1,14 @@
 <?php
 include ("includes/header.php");
+if($_SESSION["BeheerderSession"] > 0){ ?>
+
+<?php }else if($_SESSION["DocentSession"] > 0){ ?>
+
+<?php }else if($_SESSION["StudentSession"] > 0) {
+    header("Location: index.php");
+}else{
+    echo"Welkom!";
+}
  ?>
 
       <section class="wrapper">
