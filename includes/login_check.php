@@ -15,27 +15,55 @@ if(isset($_POST['login'])) {
     $sql = "SELECT * FROM gebruiker WHERE GebruikerEmail ='$email' AND GebruikerWachtwoord = '$hashed'";
     $result = mysqli_query($conn, $sql) or die("foute sql");
 
-    $stmt = $conn->prepare("SELECT DocentSession, StudentSession, BeheerderSession FROM gebruiker WHERE GebruikerEmail = '$email' LIMIT 1");
-    $stmt->bind_result($DocentSession, $StudentSession, $BeheerderSession);
+    $stmt = $conn->prepare("SELECT GebruikerID, DocentSession, StudentSession, BeheerderSession, EersteLogin FROM gebruiker WHERE GebruikerEmail = '$email' LIMIT 1");
+    $stmt->bind_result($GebruikerID, $DocentSession, $StudentSession, $BeheerderSession, $EersteLogin);
     $stmt->execute();    // Execute de voorbereide query.
     $stmt->store_result();
 
     // verkrijg variables van result.
 //    $stmt->bind_result($DocentSession, $StudentSession, $BeheerderSession);
     $stmt->fetch();
-    if(mysqli_num_rows($result) > 0){
-        session_start();
-        $_SESSION['email'] = $email;
-        $_SESSION['DocentSession'] = $DocentSession;
-        $_SESSION['StudentSession'] = $StudentSession;
-        $_SESSION['BeheerderSession'] = $BeheerderSession;
-        header('Location: ../index.php');
-        exit();
-    }else{
+    // if(mysqli_num_rows($result) > 0){
+    //     session_start();
+    //     $_SESSION['email'] = $email;
+    //     $_SESSION['DocentSession'] = $DocentSession;
+    //     $_SESSION['StudentSession'] = $StudentSession;
+    //     $_SESSION['BeheerderSession'] = $BeheerderSession;
+    //     header('Location: ../index.php');
+    //     exit();
+    // } elseif($EersteLogin == 1){
+    //   header('location: ../login-update.php');
+    //   exit();
+    // }
+    // else{
+    //     header('Location: ../login.php');
+    //     exit();
+
+
+    if(mysqli_num_rows($result) > 0 && $EersteLogin == 1){
+      session_start();
+      $_SESSION['email'] = $email;
+      $_SESSION['DocentSession'] = $DocentSession;
+      $_SESSION['StudentSession'] = $StudentSession;
+      $_SESSION['BeheerderSession'] = $BeheerderSession;
+      $_SESSION['GebruikerID'] = $GebruikerID;
+      header('location: ../login-update.php');
+      exit();
+    } elseif(mysqli_num_rows($result) > 0 && $EersteLogin != 1){
+      session_start();
+      $_SESSION['email'] = $email;
+      $_SESSION['DocentSession'] = $DocentSession;
+      $_SESSION['StudentSession'] = $StudentSession;
+      $_SESSION['BeheerderSession'] = $BeheerderSession;
+      $_SESSION['GebruikerID'] = $GebruikerID;
+      header('Location: ../index.php');
+      exit();
+    }
+    else{
         header('Location: ../login.php');
         exit();
     }
-}else{
+  } else{
 //    echo "Er is iets fout gegaan met het inloggen.";
 }
 
