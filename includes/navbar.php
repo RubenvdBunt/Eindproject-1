@@ -8,6 +8,7 @@
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
+              <li><a href="login-update.php"><i class="fa fa-lock" aria-hidden="true"></i> Wachtwoord wijzigen</a></li>
                 <li><a href="includes/logout.php"><i class="fa fa-power-off"></i> Uitloggen</a></li>
             </ul>
         </li>
