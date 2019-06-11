@@ -1665,13 +1665,22 @@ ul.bs-glyphicons-list {
 }
 
 .triple_box .single_box{
-  height: 50px;
+  transition: 0.5s;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 !important;
   width: 32%;
   margin: 0 2px 0 2px;
 }
 
 .hauto {
-  height: 450px !important;
+  height: 360px !important;
+  transition: 0.5s;
+}
+
+.rotate{
+   transform: rotateZ(180deg);
+   transition: 0.2s;
 }
 
 .triple_box .single_box .title_single_box p{
@@ -1679,8 +1688,14 @@ ul.bs-glyphicons-list {
 }
 
 .triple_box .single_box .title_single_box .fa{
+  transition: 0.2s;
   position: absolute;
   right: 10px;
+  top: 20px;
+}
+
+.title_single_box, .data_single_box{
+    padding: 0 15px;
 }
 
 .w3layouts-glyphicon{

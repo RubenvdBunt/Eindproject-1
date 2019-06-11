@@ -109,6 +109,7 @@ $stmt_info_docent->bind_result($GebruikerVoornaam);
                 console.log("click");
                 $(this).siblings(".data_single_box").slideToggle();
                 $(this).parent().toggleClass("hauto");
+                $(this).children().children().toggleClass("rotate");
               });
             </script>
         </section>
