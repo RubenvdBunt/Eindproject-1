@@ -17,28 +17,10 @@ if(isset($_POST['login'])) {
 
     $stmt = $conn->prepare("SELECT GebruikerID, DocentSession, StudentSession, BeheerderSession, EersteLogin FROM gebruiker WHERE GebruikerEmail = '$email' LIMIT 1");
     $stmt->bind_result($GebruikerID, $DocentSession, $StudentSession, $BeheerderSession, $EersteLogin);
-    $stmt->execute();    // Execute de voorbereide query.
+    $stmt->execute();
     $stmt->store_result();
 
-    // verkrijg variables van result.
-//    $stmt->bind_result($DocentSession, $StudentSession, $BeheerderSession);
     $stmt->fetch();
-    // if(mysqli_num_rows($result) > 0){
-    //     session_start();
-    //     $_SESSION['email'] = $email;
-    //     $_SESSION['DocentSession'] = $DocentSession;
-    //     $_SESSION['StudentSession'] = $StudentSession;
-    //     $_SESSION['BeheerderSession'] = $BeheerderSession;
-    //     header('Location: ../index.php');
-    //     exit();
-    // } elseif($EersteLogin == 1){
-    //   header('location: ../login-update.php');
-    //   exit();
-    // }
-    // else{
-    //     header('Location: ../login.php');
-    //     exit();
-
 
     if(mysqli_num_rows($result) > 0 && $EersteLogin == 1){
       session_start();
@@ -60,7 +42,7 @@ if(isset($_POST['login'])) {
       exit();
     }
     else{
-        header('Location: ../login.php');
+        header('Location: ../login.php?error=fout');
         exit();
     }
   } else{
