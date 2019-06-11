@@ -15,6 +15,10 @@ if(isset($_SESSION["email"])){
 //    }else{
 //        echo "niet gelukt";
 //    }
+$stmt_info_docent = $conn->prepare("SELECT DocentVoornaam FROM docent LEFT JOIN gebruiker ON gebruiker.GebruikerID = docent.GebruikerID WHERE GebruikerEmail = '".$_SESSION["email"]."'");
+$stmt_info_docent->execute();    // Execute de voorbereide query.
+$stmt_info_docent->bind_result($GebruikerVoornaam);
+// $stmt_info_docent->store_result();
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,13 +46,13 @@ if(isset($_SESSION["email"])){
                         <div class="grid_3 grid_4 w3_agileits_icons_page">
                             <div class="icons">
                                 <?php
-                                if($_SESSION["BeheerderSession"] > 0){ ?>
-                                    <h2 class="titel">Welkom beheerder!</h2>
-                                <?php }else if($_SESSION["DocentSession"] > 0){ ?>
-                                    <h2 class="titel">Welkom docent!</h2>
-                                <?php }else if($_SESSION["StudentSession"] > 0) { ?>
-                                    <h2 class="titel">Welkom student!</h2>
-                                <?php }else{
+                                if($_SESSION["BeheerderSession"] > 0){
+                                   echo"<h2 class='titel'>Welkom ".$GebruikerVoornaam."!</h2>";
+                                 }else if($_SESSION["DocentSession"] > 0){
+                                   echo"<h2 class='titel'>Welkom ".$GebruikerVoornaam."!</h2>";
+                                 }else if($_SESSION["StudentSession"] > 0) {
+                                   echo"<h2 class='titel'>Welkom ".$GebruikerVoornaam."!</h2>";
+                                 }else{
                                     echo"Welkom!";
                                 }
                                 ?>
@@ -61,6 +65,33 @@ if(isset($_SESSION["email"])){
                         ?>
 
                     </div>
+                    <br>
+                    <div class="triple_box">
+                      <div class="wthree-font-awesome single_box">
+                        <div class="title_single_box">
+                          <p>profiel <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+                        </div>
+                        <div class="data_single_box">
+                          <p>data</p>
+                        </div>
+                      </div>
+                      <div class="wthree-font-awesome single_box">
+                        <div class="title_single_box">
+                          <p>klassen <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+                        </div>
+                        <div class="data_single_box">
+                          <p>data</p>
+                        </div>
+                      </div>
+                      <div class="wthree-font-awesome single_box">
+                        <div class="title_single_box">
+                          <p>studenten <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+                        </div>
+                        <div class="data_single_box">
+                          <p>data</p>
+                        </div>
+                      </div>
+                    </div>
                 </section>
                 <?php
                  include("includes/footer.php");
@@ -69,6 +100,17 @@ if(isset($_SESSION["email"])){
             <?php
                 include_once "includes/script.php";
             ?>
+            <script>
+              $( document ).ready(function() {
+                $(".data_single_box").hide();
+              });
+
+              $(".title_single_box").click(function(){
+                console.log("click");
+                $(this).siblings(".data_single_box").slideToggle();
+                $(this).parent().toggleClass("hauto");
+              });
+            </script>
         </section>
     </body>
 </html>
