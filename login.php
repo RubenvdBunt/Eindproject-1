@@ -23,6 +23,14 @@
                     <input type="password" class="ggg" name="password" placeholder="Wachtwoord" required="">
                     <div class="clearfix"></div>
                     <input type="submit" class="submit" value="Log in" name="login">
+                    <?php
+                        if(isset($_GET['error'])){
+                            if($_GET['error'] == "fout"){
+                                echo '<p>Onjuiste E-mail/Wachtwoord combinatie.</p>';
+                            }
+                        }else{
+                        }
+                    ?>
 <!--                    echo password_hash("WACHTWOORD", PASSWORD_DEFAULT);-->
                 </form>
             </div>
