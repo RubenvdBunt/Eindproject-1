@@ -71,12 +71,17 @@ $stmt_info_docent->bind_result($GebruikerVoornaam);
                     <br>
                     <?php
                       if($_SESSION["DocentSession"] > 0){
-                        $title_box_one = "docent";
+                        $title_box_one = "box_één";
                         $title_box_two = "box_twee";
                         $title_box_three = "box_drie";
+                        $data_box_one = "<p>data_box_één</p>";
+                        $data_box_two = "<p>data_box_twee</p>";
+                        $data_box_three = "<p>data_box_drie</p>";
                       }else if($_SESSION["StudentSession"] > 0){
-                        $title_box_one = "student";
-                        $title_box_two = "box_twee";
+                        $title_box_one = "Profiel";
+                        $title_box_two = "Klas";
+                        $data_box_one = "<p>data_box_één</p>";
+                        $data_box_two = "<p>data_box_twee</p>";
                       }
 
                       if($_SESSION["StudentSession"] > 0 || $_SESSION["DocentSession"] > 0){
@@ -86,7 +91,7 @@ $stmt_info_docent->bind_result($GebruikerVoornaam);
                                     <p>".$title_box_one." <i class='fa fa-chevron-down' aria-hidden'true'></i></p>
                                   </div>
                                 <div class='data_single_box'>
-                                  <p>data</p>
+                                  ".$data_box_one."
                                 </div>
                               </div>
                               <div class='wthree-font-awesome single_box'>
@@ -94,7 +99,7 @@ $stmt_info_docent->bind_result($GebruikerVoornaam);
                                   <p>".$title_box_two." <i class='fa fa-chevron-down' aria-hidden='true'></i></p>
                                 </div>
                                 <div class='data_single_box'>
-                                  <p>data</p>
+                                  ".$data_box_two."
                                 </div>
                               </div>";
                         if($_SESSION["DocentSession"] > 0){
@@ -103,7 +108,7 @@ $stmt_info_docent->bind_result($GebruikerVoornaam);
                                   <p>".$title_box_three." <i class='fa fa-chevron-down' aria-hidden='true'></i></p>
                                 </div>
                                 <div class='data_single_box'>
-                                  <p>data</p>
+                                  ".$data_box_three."
                                 </div>
                               </div>
                             </div>";
