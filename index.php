@@ -1,24 +1,18 @@
 <?php
-session_start();
-include_once "includes/conn.php";
-include_once "includes/login_check.php";
+    session_start();
+    include_once "includes/conn.php";
+    include_once "includes/login_check.php";
 
-if(isset($_SESSION["email"])){
-//    echo '<h3>Login succesvol' .$_SESSION["email"]. '</h3>';
-}else{
-    header("Location: login.php");
-    exit();
-}
+    if(isset($_SESSION["email"])){
 
-//    if(isset($_SESSION["DocentID"]) || isset($_SESSION["GebruikerID"]) ){
-//        echo "gelukt";
-//    }else{
-//        echo "niet gelukt";
-//    }
-$stmt_info_docent = $conn->prepare("SELECT DocentVoornaam FROM docent LEFT JOIN gebruiker ON gebruiker.GebruikerID = docent.GebruikerID WHERE GebruikerEmail = '".$_SESSION["email"]."'");
-$stmt_info_docent->execute();    // Execute de voorbereide query.
-$stmt_info_docent->bind_result($GebruikerVoornaam);
-// $stmt_info_docent->store_result();
+    }else{
+        header("Location: login.php");
+        exit();
+    }
+
+    $stmt_info_docent = $conn->prepare("SELECT DocentVoornaam FROM docent LEFT JOIN gebruiker ON gebruiker.GebruikerID = docent.GebruikerID WHERE GebruikerEmail = '".$_SESSION["email"]."'");
+    $stmt_info_docent->execute();
+    $stmt_info_docent->bind_result($GebruikerVoornaam);
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,11 +53,6 @@ $stmt_info_docent->bind_result($GebruikerVoornaam);
 
                             </div>
                         </div>
-                        <p>hallo</p>
-                        <?php
-                            echo $_SESSION["BeheerderSession"];
-                        ?>
-
                     </div>
                     <br>
                     <div class="triple_box">
@@ -72,6 +61,9 @@ $stmt_info_docent->bind_result($GebruikerVoornaam);
                           <p>profiel <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
                         </div>
                         <div class="data_single_box">
+                            <?php
+                                
+                            ?>
                           <p>data</p>
                         </div>
                       </div>
