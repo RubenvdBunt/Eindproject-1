@@ -58,9 +58,9 @@
                     <br>
                     <?php
                       if($_SESSION["DocentSession"] > 0){
-                        $title_box_one = "box_één";
-                        $title_box_two = "box_twee";
-                        $title_box_three = "box_drie";
+                        $title_box_one = "Profiel";
+                        $title_box_two = "Klassen";
+                        $title_box_three = "Studenten";
                         $data_box_one = "<p>data_box_één</p>";
                         $data_box_two = "<p>data_box_twee</p>";
                         $data_box_three = "<p>data_box_drie</p>";
