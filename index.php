@@ -17,6 +17,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="author" content="Ruben van de Bunt & Joey Akse">
         <title>Welkom!</title>
         <link rel="stylesheet" href="css/bootstrap.min.css" >
         <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -55,35 +56,51 @@
                         </div>
                     </div>
                     <br>
-                    <div class="triple_box">
-                      <div class="wthree-font-awesome single_box">
-                        <div class="title_single_box">
-                          <p>profiel <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
-                        </div>
-                        <div class="data_single_box">
-                            <?php
-                                
-                            ?>
-                          <p>data</p>
-                        </div>
-                      </div>
-                      <div class="wthree-font-awesome single_box">
-                        <div class="title_single_box">
-                          <p>klassen <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
-                        </div>
-                        <div class="data_single_box">
-                          <p>data</p>
-                        </div>
-                      </div>
-                      <div class="wthree-font-awesome single_box">
-                        <div class="title_single_box">
-                          <p>studenten <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
-                        </div>
-                        <div class="data_single_box">
-                          <p>data</p>
-                        </div>
-                      </div>
-                    </div>
+                    <?php
+                      if($_SESSION["DocentSession"] > 0){
+                        $title_box_one = "box_één";
+                        $title_box_two = "box_twee";
+                        $title_box_three = "box_drie";
+                        $data_box_one = "<p>data_box_één</p>";
+                        $data_box_two = "<p>data_box_twee</p>";
+                        $data_box_three = "<p>data_box_drie</p>";
+                      }else if($_SESSION["StudentSession"] > 0){
+                        $title_box_one = "Profiel";
+                        $title_box_two = "Klas";
+                        $data_box_one = "<p>data_box_één</p>";
+                        $data_box_two = "<p>data_box_twee</p>";
+                      }
+                      if($_SESSION["StudentSession"] > 0 || $_SESSION["DocentSession"] > 0){
+                        echo "<div class='triple_box'>
+                                <div class='wthree-font-awesome single_box'>
+                                  <div class='title_single_box'>
+                                    <p>".$title_box_one." <i class='fa fa-chevron-down' aria-hidden'true'></i></p>
+                                  </div>
+                                <div class='data_single_box'>
+                                  ".$data_box_one."
+                                </div>
+                              </div>
+                              <div class='wthree-font-awesome single_box'>
+                                <div class='title_single_box'>
+                                  <p>".$title_box_two." <i class='fa fa-chevron-down' aria-hidden='true'></i></p>
+                                </div>
+                                <div class='data_single_box'>
+                                  ".$data_box_two."
+                                </div>
+                              </div>";
+                        if($_SESSION["DocentSession"] > 0){
+                        echo "<div class='wthree-font-awesome single_box'>
+                                <div class='title_single_box'>
+                                  <p>".$title_box_three." <i class='fa fa-chevron-down' aria-hidden='true'></i></p>
+                                </div>
+                                <div class='data_single_box'>
+                                  ".$data_box_three."
+                                </div>
+                              </div>
+                            </div>";
+                        }
+                      }
+                    ?>
                 </section>
                 <?php
                  include("includes/footer.php");
