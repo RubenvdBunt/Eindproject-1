@@ -1676,6 +1676,7 @@ ul.bs-glyphicons-list {
 .hauto {
   height: 360px !important;
   transition: 0.5s;
+  overflow-y:scroll;
 }
 
 .rotate{
