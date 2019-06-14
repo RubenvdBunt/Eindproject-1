@@ -10,9 +10,19 @@
         exit();
     }
 
-$GebruikerVoornaam = "";
+    $GebruikerVoornaam = "";
+
+if($_SESSION['BeheerderSession'] > 0){
+  $query_beheerder = "SELECT * FROM gebruiker WHERE GebruikerID = ".$_SESSION["GebruikerID"]."";
+  $statement_beheerder = $connect->prepare($query_beheerder);
+  $statement_beheerder->execute();
+  $result_beheerder = $statement_beheerder->fetchAll();
+
+  $GebruikerVoornaam = $result_beheerder["0"]["GebruikerEmail"];
+}
 
 if($_SESSION['StudentSession'] > 0){
+
   $query_student = "SELECT * FROM student LEFT JOIN gebruiker ON gebruiker.GebruikerID = student.GebruikerID WHERE gebruiker.GebruikerID = ".$_SESSION["GebruikerID"]."";
   $statement_student = $connect->prepare($query_student);
   $statement_student->execute();
@@ -29,6 +39,8 @@ if($_SESSION['StudentSession'] > 0){
   $result_mentor = $statement_mentor->fetchAll();
 
   $result_student["0"]["StudentGeboortedatum"] = date("d-m-Y", strtotime($result_student["0"]["StudentGeboortedatum"]));
+
+  $GebruikerVoornaam = $result_student["0"]["StudentVoornaam"];
 }
 ?>
 <!DOCTYPE html>
