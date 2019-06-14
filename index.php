@@ -66,9 +66,31 @@
                         $title_box_one = "Profiel";
                         $title_box_two = "Klassen";
                         $title_box_three = "Studenten";
-                        $data_box_one = "<p>data_box_één</p>";
+                        $data_box_one = "
+                        <table class='table table-striped table-bordered'>
+                        	<tr>
+                        		<th>Voornaam</th>
+                            <td>".$result_docent["0"]["DocentVoornaam"]."</td>
+                          </tr>
+                          <tr>
+                        		<th>Achternaam</th>
+                            <td>".$result_docent["0"]["DocentAchternaam"]."</td>
+                          </tr>
+                          <tr>
+                        		<th>Email</th>
+                            <td>".$result_docent["0"]["DocentEmail"]."</td>
+                          </tr>
+                        </table>";
+
                         $data_box_two = "<p>data_box_twee</p>";
-                        $data_box_three = "<p>data_box_drie</p>";
+                        $data_box_three = "
+                        <table class='table table-striped table-bordered'>
+                        	<tr>
+                            <td>".$result_studenten['0']['StudentVoornaam']."</td>
+                            <td>".$result_studenten["0"]["StudentTussenvoegsel"]."</td>
+                            <td>".$result_studenten["0"]["StudentAchternaam"]."</td>
+                          </tr>
+                        </table>";
                       }else if($_SESSION["StudentSession"] > 0){
                         $title_box_one = "Profiel";
                         $title_box_two = "".$result_class_student['0']['KlasNaam']."";
