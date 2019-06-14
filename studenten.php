@@ -249,7 +249,7 @@ if($_SESSION["BeheerderSession"] > 0){
     			$('#error_email').text(error_email);
     			$('#email').css('border-color', '');
     		}
-        if($('#wachtwoord').val() == '')
+        if($('#wachtwoord').is(':visible') && $('#wachtwoord').val() == '')
     		{
     			error_wachtwoord = 'Wachtwoord is verplicht.';
     			$('#error_wachtwoord').text(error_wachtwoord);
@@ -261,7 +261,7 @@ if($_SESSION["BeheerderSession"] > 0){
     			$('#error_wachtwoord').text(error_wachtwoord);
     			$('#wachtwoord').css('border-color', '');
     		}
-        if($('#hwachtwoord').val() == '')
+        if($('#hwachtwoord').is(':visible') && $('#hwachtwoord').val() == '')
     		{
     			error_hwachtwoord = 'Wachtwoord herhaling is verplicht.';
     			$('#error_hwachtwoord').text(error_hwachtwoord);
