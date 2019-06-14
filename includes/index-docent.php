@@ -9,7 +9,7 @@ if($_SESSION['DocentSession'] > 0) {
     $result_docent = $statement_docent->fetchAll();
 
     //Haalt alle studenten op.
-    $query_studenten = "SELECT StudentVoornaam, StudentTussenvoegsel, StudentAchternaam  FROM student WHERE DocentIS = $DocentID";
+    $query_studenten = "SELECT StudentVoornaam, StudentTussenvoegsel, StudentAchternaam  FROM student";
     $statement_studenten = $connect->prepare($query_studenten);
     $statement_studenten->execute();
     $result_studenten = $statement_studenten->fetchAll();
