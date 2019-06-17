@@ -120,8 +120,32 @@
                                     <p>".$title_box_one." <i class='fa fa-chevron-down' aria-hidden'true'></i></p>
                                   </div>
                                 <div class='data_single_box'>
-                                  ".$data_box_one."
-                                </div>
+                                  ";
+                                  if($_SESSION["StudentSession"] > 0){
+                                      echo $data_box_one;
+                                    }
+                                  else if($_SESSION["DocentSession"] > 0){
+                                    echo "<table class='table table-striped table-bordered'>
+                                            <tr>
+                                              <th>Mentor</th>
+                                              <td>".$result_mentor["0"]["DocentVoornaam"]." ".$result_mentor["0"]["DocentAchternaam"]."</td>
+                                            </tr>
+                                          </table>
+
+                                          <table class='table table-striped table-bordered'>
+                                            <tr>
+                                              <th>Studenten</th>
+                                            </tr>";
+                                            foreach($result_class_student as $row)
+                                          	{
+                                              echo "<tr>
+                                                		  <td>".$row["StudentVoornaam"]." ".$row["StudentAchternaam"]."</td>
+                                                    </tr>";
+                                          	}
+                                          echo "</table>";
+                                        }
+                                    }
+                                echo "</div>
                               </div>
                               <div class='wthree-font-awesome single_box'>
                                 <div class='title_single_box'>
@@ -166,7 +190,6 @@
                               </div>
                             </div>";
                         }
-                      }
                     ?>
                 </section>
                 <?php
