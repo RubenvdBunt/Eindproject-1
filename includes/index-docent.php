@@ -1,36 +1,15 @@
 <?php
 
 if($_SESSION['DocentSession'] > 0){
-  $query_docent = "SELECT * FROM docent LEFT JOIN gebruiker ON gebruiker.GebruikerID = docent.GebruikerID WHERE gebruiker.GebruikerID = ".$_SESSION["GebruikerID"]."";
-  $statement_docent = $connect->prepare($query_docent);
-  $statement_docent->execute();
-  $result_docent = $statement_docent->fetchAll();
-  print_r($result_docent);
-  echo "<br>";
+  // $query_class = "SELECT * FROM klas";
+  // $statement_class = $connect->prepare($query_class);
+  // $statement_class->execute();
+  // $result_class = $statement_class->fetchAll();
 
-  $query_class_id = 'SELECT * FROM klas k LEFT JOIN docent d ON k.DocentID = d.DocentID WHERE k.DocentID = '.$result_docent['0']['DocentID'].'';
-  $statement_class_id = $connect->prepare($query_class_id);
-  $statement_class_id->execute();
-  $result_class_id = $statement_class_id->fetchAll();
-  print_r($result_class_id);
-  echo "<br>";
-
-  $query_class_docent = 'SELECT * FROM klas k LEFT JOIN docent d ON k.KlasID = d.KlasID WHERE d.KlasID = '.$result_class_id['0']['KlasID'].'';
+  $query_class_docent = "SELECT * FROM klas k LEFT JOIN docent d ON k.DocentID = d.DocentID";
   $statement_class_docent = $connect->prepare($query_class_docent);
   $statement_class_docent->execute();
   $result_class_docent = $statement_class_docent->fetchAll();
-  print_r($result_class_docent);
-  echo "<br>";
 
-  $query_mentor = 'SELECT d.* FROM docent d LEFT JOIN klas k ON d.DocentID = k.DocentID WHERE k.DocentID = '.$result_class_docent["0"]["DocentID"].'';
-  $statement_mentor = $connect->prepare($query_mentor);
-  $statement_mentor->execute();
-  $result_mentor = $statement_mentor->fetchAll();
-  print_r($result_mentor);
-  echo "<br>";
-
-  $result_docent["0"]["StudentGeboortedatum"] = date("d-m-Y", strtotime($result_docent["0"]["StudentGeboortedatum"]));
-
-  $GebruikerVoornaam = $result_docent["0"]["DocentVoornaam"];
 }
 ?>

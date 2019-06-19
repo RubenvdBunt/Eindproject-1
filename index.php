@@ -63,34 +63,25 @@
                     <br>
                     <?php
                       if($_SESSION["DocentSession"] > 0){
-                        $title_box_one = "Profiel";
-                        $title_box_two = "Klassen";
-                        $title_box_three = "Studenten";
-                        $data_box_one = "
+                        $title_box_one = "Klassen";
+                        $title_box_two = "Profiel";
+
+                        $data_box_two = "
                         <table class='table table-striped table-bordered'>
                         	<tr>
                         		<th>Voornaam</th>
-                            <td>".$result_docent["0"]["DocentVoornaam"]."</td>
+                            <td>".$result_class_docent["0"]["DocentVoornaam"]."</td>
                           </tr>
                           <tr>
                         		<th>Achternaam</th>
-                            <td>".$result_docent["0"]["DocentAchternaam"]."</td>
+                            <td>".$result_class_docent["0"]["DocentAchternaam"]."</td>
                           </tr>
                           <tr>
-                        		<th>Email</th>
-                            <td>".$result_docent["0"]["DocentEmail"]."</td>
+                        		<th>Tussenvoegsel</th>
+                            <td>".$result_class_docent["0"]["DocentEmail"]."</td>
                           </tr>
                         </table>";
 
-                        $data_box_two = "<p>data_box_twee</p>";
-                        $data_box_three = "
-                        <table class='table table-striped table-bordered'>
-                        	<tr>
-                            <td>".$result_studenten['0']['StudentVoornaam']."</td>
-                            <td>".$result_studenten["0"]["StudentTussenvoegsel"]."</td>
-                            <td>".$result_studenten["0"]["StudentAchternaam"]."</td>
-                          </tr>
-                        </table>";
                       }else if($_SESSION["StudentSession"] > 0){
                         $title_box_one = "Profiel";
                         $title_box_two = "".$result_class_student['0']['KlasNaam']."";
@@ -147,24 +138,14 @@
                                       echo $data_box_one;
                                     }
                                   else if($_SESSION["DocentSession"] > 0){
-                                    echo "<table class='table table-striped table-bordered'>
-                                            <tr>
-                                              <th>Mentor</th>
-                                              <td>".$result_mentor["0"]["DocentVoornaam"]." ".$result_mentor["0"]["DocentAchternaam"]."</td>
-                                            </tr>
-                                          </table>
-
-                                          <table class='table table-striped table-bordered'>
-                                            <tr>
-                                              <th>Studenten</th>
-                                            </tr>";
-                                            foreach($result_class_student as $row)
-                                          	{
-                                              echo "<tr>
-                                                		  <td>".$row["StudentVoornaam"]." ".$row["StudentAchternaam"]."</td>
-                                                    </tr>";
-                                          	}
-                                          echo "</table>";
+                                    echo "<table class='table table-striped table-bordered'>";
+                                          foreach($result_class_docent as $row){
+                                            echo"<tr>
+                                                  <th><a href='klassen_overzicht.php' style='color: #808080;'>".$row["KlasNaam"]."</a></th>
+                                                  <td>".$row["DocentVoornaam"]." ".$row["DocentAchternaam"]."</td>
+                                                </tr>";
+                                          }
+                                        echo "</table>";
                                         }
 
                                   echo "</div>
@@ -196,22 +177,10 @@
                                           echo "</table>";
                                         }
                                     else if($_SESSION["DocentSession"] > 0){
-                                      echo $data_box_two;
-                                    }
+                                          echo $data_box_two;
+                                        }
                             echo "</div>
                                 </div>";
-
-                          if($_SESSION["DocentSession"] > 0){
-                          echo "<div class='wthree-font-awesome single_box'>
-                                  <div class='title_single_box'>
-                                    <p>".$title_box_three." <i class='fa fa-chevron-down' aria-hidden='true'></i></p>
-                                  </div>
-                                  <div class='data_single_box'>
-                                    ".$data_box_three."
-                                  </div>
-                                </div>
-                              </div>";
-                          }
                         }
                     ?>
                 </section>
