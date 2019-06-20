@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+$GebruikerID = $_SESSION['GebruikerID'];
 
 //action.php
 
@@ -56,6 +59,20 @@ if(isset($_POST["action"]))
 		";
 		$statement = $connect->prepare($query);
 		$statement->execute();
+
+		$id_query_docent = "SELECT GebruikerID FROM docent WHERE DocentID = '".$_POST["hidden_id"]."'";
+		$account_statement_id = $connect->prepare($id_query_docent);
+		$account_statement_id->execute();
+		$account_statement_id = $account_statement_id->fetchAll(PDO::FETCH_ASSOC);
+
+		$account_query = "
+		UPDATE gebruiker
+		SET GebruikerEmail = '".$_POST["email"]."'
+		WHERE GebruikerID = '".$account_statement_id["0"]["GebruikerID"]."'
+		";
+		$account_statement = $connect->prepare($account_query);
+		$account_statement->execute();
+
 		echo '<p>Data updated</p>';
 	}
 	if($_POST["action"] == "delete")

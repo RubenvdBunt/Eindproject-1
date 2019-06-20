@@ -77,6 +77,20 @@ if(isset($_POST["action"]))
 
 		$statement = $connect->prepare($query);
 		$statement->execute();
+
+		$id_query_student = "SELECT GebruikerID FROM student WHERE StudentID = '".$_POST["hidden_id"]."'";
+		$account_statement_id = $connect->prepare($id_query_student);
+		$account_statement_id->execute();
+		$account_statement_id = $account_statement_id->fetchAll(PDO::FETCH_ASSOC);
+
+		$account_query = "
+		UPDATE gebruiker
+		SET GebruikerEmail = '".$_POST["student_email"]."'
+		WHERE GebruikerID = '".$account_statement_id["0"]["GebruikerID"]."'
+		";
+		$account_statement = $connect->prepare($account_query);
+		$account_statement->execute();
+
 		echo '<p>Data updated</p>';
 	}
 	if($_POST["action"] == "delete")
