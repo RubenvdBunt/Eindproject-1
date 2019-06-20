@@ -118,7 +118,7 @@ include_once "includes/script.php";
         function load_data()
         {
             $.ajax({
-                url:"fetch-studenten.php",
+                url:"fetch-studenten_overzicht.php",
                 method:"POST",
                 success:function(data)
                 {
@@ -158,7 +158,7 @@ include_once "includes/script.php";
                 $('#form_action').attr('disabled', 'disabled');
                 var form_data = $(this).serialize();
                 $.ajax({
-                    url:"action-studenten.php",
+                    url:"action-studenten_overzicht.php",
                     method:"POST",
                     data:form_data,
                     success:function(data)
@@ -182,7 +182,7 @@ include_once "includes/script.php";
             var id = $(this).attr('id');
             var action = 'fetch_single';
             $.ajax({
-                url:"action-studenten.php",
+                url:"action-studenten_overzicht.php",
                 method:"POST",
                 data:{StudentID:id, action:action},
                 dataType:"json",
