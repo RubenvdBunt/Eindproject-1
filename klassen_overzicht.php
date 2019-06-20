@@ -22,7 +22,7 @@ if($_SESSION["BeheerderSession"] > 0){
         <br />
     </div>
 
-    <div id="user_dialog" title="Add Data">
+    <div id="user_dialog" title="Details">
         <form method="post" id="user_form">
             <div class="form-group">
                 <label>Voornaam:</label>
