@@ -70,15 +70,15 @@
                         <table class='table table-striped table-bordered'>
                         	<tr>
                         		<th>Voornaam</th>
-                            <td>".$result_class_docent["0"]["DocentVoornaam"]."</td>
+                            <td>".$result_class_docent_info["0"]["DocentVoornaam"]."</td>
                           </tr>
                           <tr>
                         		<th>Achternaam</th>
-                            <td>".$result_class_docent["0"]["DocentAchternaam"]."</td>
+                            <td>".$result_class_docent_info["0"]["DocentAchternaam"]."</td>
                           </tr>
                           <tr>
                         		<th>Tussenvoegsel</th>
-                            <td>".$result_class_docent["0"]["DocentEmail"]."</td>
+                            <td>".$result_class_docent_info["0"]["DocentEmail"]."</td>
                           </tr>
                         </table>";
 
